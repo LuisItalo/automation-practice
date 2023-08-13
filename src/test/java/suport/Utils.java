@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import runner.RunTest;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class Utils extends RunTest {
@@ -24,5 +25,18 @@ public class Utils extends RunTest {
         int resultado = random.nextInt(maximo-minimo) + minimo;
 
         return email_init + resultado + email_final;
+    }
+
+    public String getRandonPass(int len){
+        final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*";
+
+        SecureRandom random =new SecureRandom();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < len; i++){
+            int radomIndex = random.nextInt(chars.length());
+            sb.append(chars.charAt(radomIndex));
+        }
+        return sb.toString();
     }
 }
