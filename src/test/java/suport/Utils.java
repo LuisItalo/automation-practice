@@ -7,6 +7,7 @@ import runner.RunTest;
 
 import java.security.SecureRandom;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Utils extends RunTest {
 
@@ -38,5 +39,37 @@ public class Utils extends RunTest {
             sb.append(chars.charAt(radomIndex));
         }
         return sb.toString();
+    }
+
+    public StringBuilder getNomeAleatorio(){
+        ThreadLocalRandom gerador = ThreadLocalRandom.current();
+
+        int tamanhoNome = gerador.nextInt(3, 10);
+
+        char primeiraLetraNome = (char) gerador.nextInt(65, 90);
+
+        StringBuilder nome = new StringBuilder().append(primeiraLetraNome);
+
+        for (int i = 1; i < tamanhoNome; i++){
+            char letra = (char) gerador.nextInt(97, 122);
+            nome.append(letra);
+        }
+
+        return nome;
+    }
+    public String getSobrenomeAleatorio() {
+        ThreadLocalRandom gerador = ThreadLocalRandom.current();
+
+        int tamanhoSobrenome = gerador.nextInt(3, 10);
+
+        char primeiraLetraSobreNome = (char) gerador.nextInt(65, 90);
+
+        StringBuilder sobreNome = new StringBuilder().append(primeiraLetraSobreNome);
+
+        for (int i = 1; i < tamanhoSobrenome; i++) {
+            char letra = (char) gerador.nextInt(97, 122);
+            sobreNome.append(letra);
+        }
+        return sobreNome + "QA";
     }
 }
