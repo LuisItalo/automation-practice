@@ -3,14 +3,12 @@ package steps;
 
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import pages.CadastroPage;
 import runner.RunTest;
 
 public class CadastroSteps extends RunTest {
 
-    CadastroPage cadastroPage = new CadastroPage(driver);
+    CadastroPage cadastroPage = new CadastroPage();
 
 
     @Quando("^eu preencho o formulario de cadastro$")

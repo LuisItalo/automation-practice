@@ -18,7 +18,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5033532019,
+              "duration": 10843737064,
               "status": "passed"
             },
             "line": 8,
@@ -30,7 +30,7 @@
           },
           {
             "result": {
-              "duration": 456758972,
+              "duration": 488220255,
               "status": "passed"
             },
             "line": 9,
@@ -42,7 +42,7 @@
           },
           {
             "result": {
-              "duration": 3689136523,
+              "duration": 3698248361,
               "status": "passed"
             },
             "line": 10,
@@ -54,7 +54,7 @@
           },
           {
             "result": {
-              "duration": 6633774023,
+              "duration": 6685293731,
               "status": "passed"
             },
             "line": 11,
@@ -66,7 +66,7 @@
           },
           {
             "result": {
-              "duration": 272930034,
+              "duration": 229484842,
               "status": "passed"
             },
             "line": 12,
@@ -81,6 +81,82 @@
           {
             "line": 6,
             "name": "@cadastro-sucesso"
+          }
+        ]
+      },
+      {
+        "line": 15,
+        "name": "Registrar novo usuario com sucesso2",
+        "description": "",
+        "id": "cadastro-de-usuario;registrar-novo-usuario-com-sucesso2",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6825960885,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "que estou na tela de login",
+            "match": {
+              "location": "LoginSteps.que_estou_na_tela_de_login()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 500420557,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "acesso o cadastro de usuario",
+            "match": {
+              "location": "LoginSteps.acesso_o_cadastro_de_usuario()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 3338980441,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "eu preencho o formulario de cadastro",
+            "match": {
+              "location": "CadastroSteps.eu_preencho_o_formulario_de_cadastro()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 6234545679,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "clico em registrar",
+            "match": {
+              "location": "CadastroSteps.clico_em_registrar()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 565801595,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "vejo a mensagem de cadastro realizado com sucesso",
+            "match": {
+              "location": "CadastroSteps.vejo_a_mensagem_de_cadastro_realizado_com_sucesso()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 14,
+            "name": "@cadastro-sucesso2"
           }
         ]
       }

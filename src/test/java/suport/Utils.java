@@ -11,12 +11,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Utils extends RunTest {
 
-    public void waitElementBePresent(By element, int tempo){
-        WebDriverWait wait = new WebDriverWait(driver, tempo);
+    public static void waitElementBePresent(By element, int tempo){
+        WebDriverWait wait = new WebDriverWait(getDriver(), tempo);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public String getRandonEmail(){
+    public static String getRandonEmail(){
         String email_init = "luisqa";
         String email_final = "@teste.com.br";
 
@@ -28,7 +28,7 @@ public class Utils extends RunTest {
         return email_init + resultado + email_final;
     }
 
-    public String getRandonPass(int len){
+    public static String getRandonPass(int len){
         final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*";
 
         SecureRandom random =new SecureRandom();
@@ -41,7 +41,7 @@ public class Utils extends RunTest {
         return sb.toString();
     }
 
-    public StringBuilder getNomeAleatorio(){
+    public static StringBuilder getNomeAleatorio(){
         ThreadLocalRandom gerador = ThreadLocalRandom.current();
 
         int tamanhoNome = gerador.nextInt(3, 10);
@@ -57,7 +57,7 @@ public class Utils extends RunTest {
 
         return nome;
     }
-    public String getSobrenomeAleatorio() {
+    public static String getSobrenomeAleatorio() {
         ThreadLocalRandom gerador = ThreadLocalRandom.current();
 
         int tamanhoSobrenome = gerador.nextInt(3, 10);
