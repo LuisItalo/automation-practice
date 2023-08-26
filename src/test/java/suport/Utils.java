@@ -1,10 +1,16 @@
 package suport;
 
+import cucumber.api.Scenario;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import runner.RunTest;
 
+import java.io.File;
+import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -14,6 +20,17 @@ public class Utils extends RunTest {
     public static void waitElementBePresent(By element, int tempo){
         WebDriverWait wait = new WebDriverWait(getDriver(), tempo);
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void screenshot(String nomeEvidencia){
+        TakesScreenshot scrShot = (TakesScreenshot) getDriver();
+        File srcFile = scrShot.getScreenshotAs((OutputType.FILE));
+        File destFile = new File("./evidencias/" + nomeEvidencia + ".png");
+        try {
+            FileUtils.copyFile(srcFile, destFile);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public static String getRandonEmail(){

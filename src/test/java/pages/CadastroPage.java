@@ -82,8 +82,8 @@ public class CadastroPage extends RunTest {
         getDriver(). findElement(submit_button).click();
     }
     public void validaCadastro(){
-        Utils.waitElementBePresent(By.cssSelector("p[class=\"alert alert-success\"]"), 10);
-        String resultado_atual = getDriver().findElement(By.cssSelector("p[class=\"alert alert-success\"]")).getText();
+        Utils.waitElementBePresent(By.cssSelector("p[class='alert alert-success']"), 10);
+        String resultado_atual = getDriver().findElement(By.cssSelector("p[class='alert alert-success']")).getText();
         Assert.assertEquals("Your account has been created.", resultado_atual);
     }
 }
